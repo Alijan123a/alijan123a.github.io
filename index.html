@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">ALI</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link" data-page="home">Home</a>
+            <a href="#" class="nav-link" data-page="projects">Projects</a>
+            <a href="#" class="nav-link" data-page="skills">Skills</a>
+        </div>
+    </nav>
+    
+    <!-- Home Page -->
+    <div class="page active" id="home">
+        <div class="home-content">
+            <div class="home-text">
+                <h1>I'm Aljim, a</h1>
+                <h2>Computer Science Student</h2>
+                <p>I am a passionate developer with expertise in React.js, HTML, and CSS.</p>
+                <p>I create responsive and user-friendly web applications with modern design principles.</p>
+                <p>Currently studying Computer Engineering at Amir Kabir University.</p>
+            </div>
+            <div class="profile-photo">
+                <img src="ali.jpg" alt="Ali Photo">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Projects Page -->
+    <div class="page" id="projects">
+        <div class="projects-header">
+            <h2>Awards and projects</h2>
+            <p>Here are some awards, contributors and projects</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="download.jpg" alt="E-commerce Website"/>
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Website</h3>
+                    <p>Developed a full-featured online store with React and Node.js, implementing secure payment processing.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="portal(1).jpg" alt="University Portal"/>
+                </div>
+                <div class="project-info">
+                    <h3>University Portal</h3>
+                    <p>Created a student portal for Amir Kabir University with advanced scheduling features.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images.jpg" alt="AI Research Project"/>
+                </div>
+                <div class="project-info">
+                    <h3>AI Research Project</h3>
+                    <p>Contributed to machine learning research project focused on natural language processing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="skills">
+        <div class="skills-header">
+            <h2>Technical competencies</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Icon">
+                </div>
+                <h3>React.js</h3>
+                <p>Proficient in building dynamic single-page applications with React, utilizing hooks, context API, and Redux for state management.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML Icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Icon">
+                </div>
+                <h3>HTML & CSS</h3>
+                <p>Expert in creating responsive, accessible web designs with modern CSS techniques including Flexbox and Grid.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Icon">
+                </div>
+                <h3>JavaScript</h3>
+                <p>Strong understanding of modern JavaScript (ES6+), asynchronous programming, and DOM manipulation.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simple page navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Hide all pages
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show selected page
+                const pageId = this.getAttribute('data-page');
+                document.getElementById(pageId).classList.add('active');
+                
+                // Update active link styling (optional)
+                document.querySelectorAll('.nav-link').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
